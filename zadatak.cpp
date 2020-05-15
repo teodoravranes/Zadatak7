@@ -2,6 +2,9 @@
 #include "dinstring.hpp"
 #include "lista.hpp"
 
+enum velicina {XS, S, M, L, XL};
+enum tip {MAJICA, PANTALONE};
+
 using namespace std;
 
 class Proizvod
@@ -87,3 +90,50 @@ cout <<"************************************"<<endl;
 };
 
 
+class Odeca : public Proizvod 
+{
+private:
+velicina Velicina;
+tip Tip;
+
+public:
+Odeca()
+{
+cena = 500;
+naziv = "Nije unet";
+Velicina = S;
+Tip = MAJICA;
+}
+
+Odeca(int C, DinString N, velicina V, tip T)
+{
+cena = C;
+naziv = N;
+Velicina = V;
+Tip = T;
+}
+
+Odeca(const Osoba &o)
+{
+cena = o.cena;
+naziv = o.naziv;
+Velicina = o.Velicina;
+Tip = o.Tip;
+}
+
+void izracunajPopust()
+{
+if(Tip == MAJICA)
+{
+if(Velicina == XS)
+cena = (40/100)*cena;
+else
+cena = (50/100)*cena;
+}
+else 
+{
+cena = (67/100)*cena;
+}
+}
+
+};
