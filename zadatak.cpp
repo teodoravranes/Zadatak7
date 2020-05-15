@@ -137,3 +137,33 @@ cena = (67/100)*cena;
 }
 
 };
+
+class Prodavnica
+{
+private:
+DinString naziv;
+Lista<Proizvod> proizvodi;
+
+public:
+Prodavnica() {naziv = "Nije unet";}
+
+Prodavnica(DinString M) {naziv = N;}
+
+Prodavnica(const Prodavnica &p) {naziv=p.naziv;}
+
+};
+
+class Grad 
+{
+private:
+DinString naziv;
+Lista<Prodavnica> prodavnice;
+
+public:
+Grad() {naziv = "Nije unet";}
+
+Grad(DinString M) {naziv = N;}
+
+Grad(const Grad &g) {naziv=g.naziv;}
+
+};
